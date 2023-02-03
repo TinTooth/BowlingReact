@@ -1,0 +1,12 @@
+.frame {
+    aspect-ratio: 1/1;
+  width: 9vw;
+    background-color: rgb(112, 138, 187);
+    border: solid 1px black;
+}
+
+.frame-number {
+    text-align: right;
+    border-bottom: solid 1px black;
+    padding-right: 5%;
+}

@@ -1,6 +1,12 @@
+import "./Frame.css"
+
 const Frame = ({frame}) => {
     return ( 
-        <div>Frame {frame.frameNumber+1}</div>
+        <div className="frame">
+            <div className="frame-number">{frame.frameNumber+1}</div>
+            <div></div>
+        </div>
+    
      );
 }
  

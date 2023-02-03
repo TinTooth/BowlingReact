@@ -1,0 +1,11 @@
+.frame-container {
+    
+}
+
+.scorecard {
+    width :100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center
+}

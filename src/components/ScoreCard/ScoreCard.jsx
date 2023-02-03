@@ -1,9 +1,9 @@
 import Frame from "../Frame/Frame";
-
+import "./ScoreCard.css"
 const ScoreCard = ({frames}) => {
 
     return frames ?( 
-        <div>ScoreCard
+        <div className="scorecard">
             {frames.map((frame,i) => {
                 return(
                 <div className="frameContainer" key = {i}>
