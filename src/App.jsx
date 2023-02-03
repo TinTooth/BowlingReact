@@ -6,7 +6,7 @@ import Player from './components/Player/Player';
 function App() {
   return (
     <div className="App">
-    <Player></Player>
+    <Player name = {'Ben'}></Player>
     </div>
   );
 }

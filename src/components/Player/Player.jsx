@@ -1,4 +1,6 @@
 import { useEffect,useState } from "react";
+import InputControls from "../InputControls/InputControls";
+import ScoreCard from "../ScoreCard/ScoreCard";
 
 class Frame {
     constructor (frameNumber) {
@@ -10,14 +12,11 @@ class Frame {
 
 }
 
-const Player = () => {
+const Player = ({name}) => {
+    let player = name
     const [frames, setframes] = useState(generateFrames());
+    const [total, settotal] = useState(0);
 
-    // useEffect(() => {
-    //     let result = generateFrames()
-    //     setframes(result)
-    // }, []);
-  
     function generateFrames () {
         let result = []
         for (let i = 0; i <= 9; i++) {
@@ -28,9 +27,13 @@ const Player = () => {
         return result
     }
 
-    return frames ? (
-        <div>{frames[1].frameNumber}</div>
-      ): null;
+    return (
+        <>
+        <div>Player: {player}</div>
+        <ScoreCard></ScoreCard>
+        <InputControls></InputControls>
+        </>
+      );
 }
  
 export default Player;
