@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Frame from './components/Frame/Frame';
+import Player from './components/Player/Player';
+
 
 function App() {
   return (
     <div className="App">
-     <Frame frame = {10}></Frame>
+    <Player></Player>
     </div>
   );
 }
