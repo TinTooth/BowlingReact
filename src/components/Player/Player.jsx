@@ -23,14 +23,13 @@ const Player = ({name}) => {
             let newFrame = new Frame(i)
             result.push(newFrame)
         }
-        console.log(result)
         return result
     }
 
     return (
         <>
-        <div>Player: {player}</div>
-        <ScoreCard></ScoreCard>
+        <div>Player: {player} Score: {total}</div>
+        <ScoreCard frames = {frames}></ScoreCard>
         <InputControls></InputControls>
         </>
       );
