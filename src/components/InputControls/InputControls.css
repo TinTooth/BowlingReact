@@ -1,0 +1,29 @@
+.control-bar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.frame-controls {
+    width: 10%;
+}
+
+.ball-controls {
+    width: 80%;
+}
+
+.ball {
+    width: 20%;
+    background-color: gray;
+}
+
+.ball-button {
+    width: 8%;
+    border: solid 1px black
+}
+
+.ball-button:hover {
+    background-color: black;
+    color: white;
+}

@@ -10,3 +10,30 @@
     border-bottom: solid 1px black;
     padding-right: 5%;
 }
+
+.ball-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.ball1 {
+    width: 50%;
+    border: solid 1px transparent;
+}
+
+.ball2 {
+    width: 50%;
+    border: solid 1px white;
+}
+.ball3 {
+    width: 50%;
+    border: solid 1px rgb(237, 240, 87);
+}
+
+.frame-total {
+    color: brown;
+    width: 50%;
+}
+

@@ -6,8 +6,13 @@ class Frame {
     constructor (frameNumber) {
         this.frameNumber = frameNumber
         this.ball1 = 0
+        this.ball1bowled = true
         this.ball2 = 0
+        this.ball2bowled = false
         this.ball3 = 0
+        this.ball3bowled = false
+        this.frametotal = 0
+        this.framescored = false
     }
 
 }
@@ -30,7 +35,7 @@ const Player = ({name}) => {
         <>
         <div>Player: {player} Score: {total}</div>
         <ScoreCard frames = {frames}></ScoreCard>
-        <InputControls></InputControls>
+        <InputControls frames = {frames} setframes = {setframes}></InputControls>
         </>
       );
 }
