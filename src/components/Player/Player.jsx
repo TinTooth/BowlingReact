@@ -42,8 +42,17 @@ const Player = ({name}) => {
     }
 
     const spareFrame = (frame) => {
-        console.log('spare')
-
+        // console.log('spare')
+        if (frames[frame+1].ball1bowled == true){
+            frames[frame].frametotal = 10 + +frames[frame+1].ball1
+            frames[frame].framescored = true;
+        }
+        if (frame != 0) {
+            frames[frame].frametotal += frames[frame-1].frametotal
+        }
+        let newFrames = [...frames];
+        setframes(newFrames);
+    
     }
 
     const strikeFrame = (frame) => {
@@ -58,7 +67,7 @@ const Player = ({name}) => {
         if (frame != 0) {
             frames[frame].frametotal += frames[frame-1].frametotal
         }
-        console.log('strike')
+        // console.log('strike')
         let newFrames = [...frames];
         setframes(newFrames);
         
@@ -121,10 +130,10 @@ const Player = ({name}) => {
                     strikeFrame(frame.frameNumber);
                 }
                 else if (frame.spare == true){
-                    spareFrame(frame);
+                    spareFrame(frame.frameNumber);
                 }
                 else {
-                    openFrame(frame);
+                    openFrame(frame.frameNumber);
                 }
 
 
