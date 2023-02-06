@@ -20,7 +20,7 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
         frames[currentFrame].ball1bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
-        calculateFrames();
+        calculateFrames(currentFrame);
     }
     const setBall2 = (e) => {
         
@@ -75,8 +75,11 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     <div className="ball-button" id = '9' onClick = {setBall2}>9</div>
                     <div className="ball-button" id = '10' onClick = {setBall2}>10</div>
                 </div>
-                <div className="ball-row">
-                <div className="ball"> 3rd Ball</div>
+                { currentFrame == 9 ? (
+
+                    <div className="ball-row">
+
+                    <div className="ball"> 3rd Ball</div>
                     <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
                     <div className="ball-button" id = '1' onClick = {setBall3}>1</div>
                     <div className="ball-button" id = '2' onClick = {setBall3}>2</div>
@@ -90,10 +93,12 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     <div className="ball-button" id = '10' onClick = {setBall3}>10</div>
                     
                 </div>
+                ): null
+                }   
             </div>
         </div>
         
      );
-}
+    }
  
 export default InputControls;

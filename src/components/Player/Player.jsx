@@ -6,7 +6,7 @@ class Frame {
     constructor (frameNumber) {
         this.frameNumber = frameNumber
         this.ball1 = 0
-        this.ball1bowled = true
+        this.ball1bowled = false
         this.ball2 = 0
         this.ball2bowled = false
         this.ball3 = 0
@@ -54,16 +54,43 @@ const Player = ({name}) => {
 
     const checkForMarks = () => {
         frames.forEach((frame) => {
-            if (frame.ball1 === 10) {
-                frame.stike = true;
+            console.log('hello')
+            if (frame.frameNumber != 9){
+                if (frame.ball1 == 10) {
+                    frame.stike = true;
+                    frame.ball2display = 'X'
+                    frame.ball1display = ''
+                }
+                else if (+frame.ball1 + +frame.ball2 == 10){
+                    frame.spare = true;
+                    frame.ball2display = "/"
+                }
+                else  {
+                    if (frame.ball1bowled == true) {
+                        frame.ball1display = frame.ball1
+                    }
+                    if (frame.ball2bowled == true) {
+                        frame.ball2display = frame.ball2
+                    }
+                }
+
             }
-            if (frame.ball1 + frame.ball2 == 10){
-                frame.spare = true;
+            else {
+                if (frame.ball1 == 10) {
+                    frame.ball1display = "X"
+                }
+                if (frame.ball2 == 10){
+                    frame.ball2display = "X"
+                }
+                if (frame.ball3 == 10) {
+                    frame.ball3display = "X"
+                }
             }
         })
         let newFrames = [...frames];
+        console.log(newFrames)
         setframes(newFrames);
-
+        console.log(frames)
     }
 
 
