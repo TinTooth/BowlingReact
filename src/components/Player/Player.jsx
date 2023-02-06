@@ -81,8 +81,14 @@ const Player = ({name}) => {
     }
     
     const tenthFrame = (frame) => {
+        if (frames[frame].ball1bowled == true) {
+            frames[frame].framescored = true;
+        }
+        frames[frame].frametotal += frames[frame-1].frametotal + +frames[frame].ball1 + +frames[frame].ball2 + +frames[frame].ball3
+
+        let newFrames = [...frames];
+        setframes(newFrames);
         
-        console.log('tenth')
     }
 
     const checkForMarks = () => {
@@ -106,17 +112,34 @@ const Player = ({name}) => {
                         frame.ball2display = frame.ball2
                     }
                 }
-
             }
             else {
                 if (frame.ball1 == 10) {
                     frame.ball1display = "X"
+                    // frame.strike = true;
                 }
+                else {
+                    frame.ball1display = frame.ball1
+                }
+
                 if (frame.ball2 == 10){
                     frame.ball2display = "X"
                 }
+                else if (+frame.ball1 + +frame.ball2 == 10 && frame.ball2bowled == true){
+                    frame.ball2display = "/"
+                    frame.spare = true;
+                }
+                else {
+                    frame.ball2display = frame.ball2;
+                }
                 if (frame.ball3 == 10) {
                     frame.ball3display = "X"
+                }
+                else if (+frame.ball2 + +frame.ball3 == 10){
+                    frame.ball3display = "/"
+                }
+                else {
+                    frame.ball3display = frame.ball3
                 }
             }
         })
@@ -129,19 +152,19 @@ const Player = ({name}) => {
     const calculateFrames = () => {
         checkForMarks();  
         frames.forEach((frame) => {
-            console.log(frame)
+            // console.log(frame)
             if (frame.frameNumber == 9) {
-                tenthFrame(frame);
+                tenthFrame(frame.frameNumber);
             }
-                if (frame.strike == true) {
-                    strikeFrame(frame.frameNumber);
-                }
-                else if (frame.spare == true){
-                    spareFrame(frame.frameNumber);
-                }
-                else if (frame.ball1bowled == true && frame.ball2bowled == true) {
-                    openFrame(frame.frameNumber);
-                }
+            else if (frame.strike == true) {
+                strikeFrame(frame.frameNumber);
+            }
+            else if (frame.spare == true){
+                spareFrame(frame.frameNumber);
+            }
+            else if (frame.ball1bowled == true && frame.ball2bowled == true) {
+                openFrame(frame.frameNumber);
+            }
 
 
      })
