@@ -18,6 +18,7 @@ class Frame {
         this.ball3display = ''
         this.strike = false
         this.spare = false
+        this.tenMark = false
     }
 
 }
@@ -38,7 +39,7 @@ const Player = ({name}) => {
 
     const openFrame = (frame) => {
         // console.log('open')
-        frames[frame].frametotal = +frames[frame].ball1 + +frames[frame].ball1
+        frames[frame].frametotal = +frames[frame].ball1 + +frames[frame].ball2
         frames[frame].framescored = true
         if (frame != 0) {
             frames[frame].frametotal += frames[frame-1].frametotal
@@ -82,10 +83,13 @@ const Player = ({name}) => {
     
     const tenthFrame = (frame) => {
         if (frames[frame-1].framescored == true && frames[frame].ball1bowled == true){
-            
             frames[frame].framescored = true;
             frames[frame].frametotal = 0;
             frames[frame].frametotal += frames[frame-1].frametotal + +frames[frame].ball1 + +frames[frame].ball2 + +frames[frame].ball3
+        }
+
+        if (frames[frame].ball1 == 10 || +frames[frame].ball1 + +frames[frame].ball2 == 10) {
+            frames[frame].tenMark = true
         }
 
         let newFrames = [...frames];

@@ -39,6 +39,22 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
         calculateFrames();
     }
 
+    const generateButtonBall2 = (i) => {
+        if (+frames[currentFrame].ball1 + i < 10){
+            return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall2}>{i+1}</div> )
+        }
+    }
+    const generateButtonBall2tenth = (i) => {
+        
+        return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall2}>{i+1}</div> )
+    
+    }
+    const generateButtonBall1 = (i) => {
+    
+     return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall1}>{i+1}</div> )
+       
+    }
+
     return (
         <div className = "control-bar">
             <div className="frame-controls">
@@ -50,35 +66,23 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                 <div className="ball-row">
                     <div className="ball"> 1st Ball</div>
                     <div className="ball-button" id = '0' onClick = {setBall1}>0</div>
-                    <div className="ball-button" id = '1' onClick = {setBall1}>1</div>
-                    <div className="ball-button" id = '2' onClick = {setBall1}>2</div>
-                    <div className="ball-button" id = '3' onClick = {setBall1}>3</div>
-                    <div className="ball-button" id = '4' onClick = {setBall1}>4</div>
-                    <div className="ball-button" id = '5' onClick = {setBall1}>5</div>
-                    <div className="ball-button" id = '6' onClick = {setBall1}>6</div>
-                    <div className="ball-button" id = '7' onClick = {setBall1}>7</div>
-                    <div className="ball-button" id = '8' onClick = {setBall1}>8</div>
-                    <div className="ball-button" id = '9' onClick = {setBall1}>9</div>
-                    <div className="ball-button" id = '10' onClick = {setBall1}>10</div>
+                    {frames.map((frame)=> {
+                        return (generateButtonBall1(frame.frameNumber))
+                    })}
                 </div>
                 <div className="ball-row">
                 <div className="ball"> 2nd Ball</div>
-                    <div className="ball-button" id = '0' onClick = {setBall2}>0</div>
-                    <div className="ball-button" id = '1' onClick = {setBall2}>1</div>
-                    <div className="ball-button" id = '2' onClick = {setBall2}>2</div>
-                    <div className="ball-button" id = '3' onClick = {setBall2}>3</div>
-                    <div className="ball-button" id = '4' onClick = {setBall2}>4</div>
-                    <div className="ball-button" id = '5' onClick = {setBall2}>5</div>
-                    <div className="ball-button" id = '6' onClick = {setBall2}>6</div>
-                    <div className="ball-button" id = '7' onClick = {setBall2}>7</div>
-                    <div className="ball-button" id = '8' onClick = {setBall2}>8</div>
-                    <div className="ball-button" id = '9' onClick = {setBall2}>9</div>
-                    <div className="ball-button" id = '10' onClick = {setBall2}>10</div>
+                <div className="ball-button" id = '0' onClick = {setBall2}>0</div>
+                {currentFrame != 9 || frames[9].ball1 != 10? (frames.map((frame)=> {
+                        return (generateButtonBall2(frame.frameNumber))
+                    })):
+                    (frames.map((frame)=> {
+                        return (generateButtonBall2tenth(frame.frameNumber))
+                    }))}
                 </div>
-                { currentFrame == 9 ? (
+                { currentFrame == 9 && frames[9].tenMark ? (
 
                     <div className="ball-row">
-
                     <div className="ball"> 3rd Ball</div>
                     <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
                     <div className="ball-button" id = '1' onClick = {setBall3}>1</div>
