@@ -36,30 +36,47 @@ const Player = ({name}) => {
         return result
     }
 
-    const openFrame = () => {
+    const openFrame = (frame) => {
+        console.log('open')
 
     }
 
-    const spareFrame = () => {
+    const spareFrame = (frame) => {
+        console.log('spare')
 
     }
 
-    const strikeFrame = () => {
-
+    const strikeFrame = (frame) => {
+        if (frames[frame+1].ball1bowled == true && frames[frame+1].ball2bowled == true) {
+            frames[frame].frametotal = 10 + +frames[frame+1].ball1 + +frames[frame+1].ball2
+            frames[frame].framescored = true;
+        }
+        else if (frames[frame+1].ball1bowled == true && frames[frame+2].ball1bowled == true) {
+            frames[frame].frametotal = 10 + +frames[frame+1].ball1 + +frames[frame+2].ball1
+            frames[frame].framescored = true;
+        }
+        if (frame != 0) {
+            frames[frame].frametotal += frames[frame-1].frametotal
+        }
+        console.log('strike')
+        let newFrames = [...frames];
+        setframes(newFrames);
+        
     }
-
-    const tenthFrame = () => {
-
+    
+    const tenthFrame = (frame) => {
+        
+        console.log('tenth')
     }
 
     const checkForMarks = () => {
         frames.forEach((frame) => {
-            console.log('hello')
             if (frame.frameNumber != 9){
                 if (frame.ball1 == 10) {
-                    frame.stike = true;
-                    frame.ball2display = 'X'
-                    frame.ball1display = ''
+                    frame.strike = true;
+                    frame.ball2display = 'X';
+                    frame.ball1display = '';
+                    // frame.ball2bowled = true;
                 }
                 else if (+frame.ball1 + +frame.ball2 == 10){
                     frame.spare = true;
@@ -88,15 +105,27 @@ const Player = ({name}) => {
             }
         })
         let newFrames = [...frames];
-        console.log(newFrames)
         setframes(newFrames);
-        console.log(frames)
+        
     }
 
 
     const calculateFrames = () => {
         checkForMarks();  
         frames.forEach((frame) => {
+            console.log(frame)
+            if (frame.frameNumber == 9) {
+                tenthFrame(frame);
+            }
+                if (frame.strike == true) {
+                    strikeFrame(frame.frameNumber);
+                }
+                else if (frame.spare == true){
+                    spareFrame(frame);
+                }
+                else {
+                    openFrame(frame);
+                }
 
 
      })
