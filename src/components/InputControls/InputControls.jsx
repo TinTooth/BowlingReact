@@ -39,6 +39,11 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
         calculateFrames();
     }
 
+    const generateButtonBall1 = (i) => {
+    
+     return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall1}>{i+1}</div> )
+       
+    }
     const generateButtonBall2 = (i) => {
         if (+frames[currentFrame].ball1 + i < 10){
             return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall2}>{i+1}</div> )
@@ -47,11 +52,11 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
     const generateButtonBall2tenth = (i) => {
         
         return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall2}>{i+1}</div> )
-    
     }
-    const generateButtonBall1 = (i) => {
     
-     return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall1}>{i+1}</div> )
+    const generateButtonBall3 = (i) => {
+    
+     return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall3}>{i+1}</div> )
        
     }
 
@@ -85,16 +90,9 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     <div className="ball-row">
                     <div className="ball"> 3rd Ball</div>
                     <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
-                    <div className="ball-button" id = '1' onClick = {setBall3}>1</div>
-                    <div className="ball-button" id = '2' onClick = {setBall3}>2</div>
-                    <div className="ball-button" id = '3' onClick = {setBall3}>3</div>
-                    <div className="ball-button" id = '4' onClick = {setBall3}>4</div>
-                    <div className="ball-button" id = '5' onClick = {setBall3}>5</div>
-                    <div className="ball-button" id = '6' onClick = {setBall3}>6</div>
-                    <div className="ball-button" id = '7' onClick = {setBall3}>7</div>
-                    <div className="ball-button" id = '8' onClick = {setBall3}>8</div>
-                    <div className="ball-button" id = '9' onClick = {setBall3}>9</div>
-                    <div className="ball-button" id = '10' onClick = {setBall3}>10</div>
+                    {frames.map((frame)=> {
+                        return (generateButtonBall3(frame.frameNumber))
+                    })}
                     
                 </div>
                 ): null

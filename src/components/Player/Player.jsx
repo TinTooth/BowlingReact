@@ -23,8 +23,9 @@ class Frame {
 
 }
 
-const Player = ({name}) => {
+const Player = ({name, handicap}) => {
     let player = name
+    let hc = handicap
     const [frames, setframes] = useState(generateFrames());
     const [total, settotal] = useState(0);
 
@@ -36,6 +37,13 @@ const Player = ({name}) => {
         }
         return result
     }
+
+    useEffect ( () => {
+        getScore()
+        console.log('useEffect')
+    },[frames]
+
+    )
 
     const openFrame = (frame) => {
         // console.log('open')
@@ -177,9 +185,21 @@ const Player = ({name}) => {
 
     }
 
+    function getScore () {
+        console.log('getscore')
+        let result = frames[0].frametotal
+        for (let i = 1; i <=9; i++) {
+            if (frames[i].framescored == true)  {
+                result += (frames[i].frametotal - frames[i-1].frametotal)
+            }
+        }
+        settotal(result)
+    }
+
     return (
         <>
-        <div>Player: {player} Score: {total}</div>
+        <div>Player: {player} Handicap: {hc}</div>
+        <div>Score: {total} Handicaped Score : {total+hc}</div>
         <ScoreCard frames = {frames}></ScoreCard>
         <InputControls frames = {frames} setframes = {setframes} calculateFrames = {calculateFrames}></InputControls>
         </>

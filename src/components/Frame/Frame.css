@@ -19,6 +19,7 @@
 }
 
 .ball1 {
+    aspect-ratio: 1/1;
     width: 50%;
     border: solid 1px transparent;
 }
@@ -29,6 +30,7 @@
     border: solid 1px white;
 }
 .ball3 {
+    aspect-ratio: 1/1;
     width: 50%;
     border: solid 1px rgb(237, 240, 87);
 }
