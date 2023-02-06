@@ -15,21 +15,21 @@ const InputControls = ({frames, setframes}) => {
     }
 
     const setBall1 = (e) => {
-        console.log(e)
+       
         frames[currentFrame].ball1 = e.target.id
         frames[currentFrame].ball1bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
     }
     const setBall2 = (e) => {
-        console.log(e)
+      
         frames[currentFrame].ball2 = e.target.id
         frames[currentFrame].ball2bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
     }
     const setBall3 = (e) => {
-        console.log(e)
+       
         frames[currentFrame].ball3 = e.target.id
         frames[currentFrame].ball3bowled = true
         let newFrames = [...frames];
@@ -46,6 +46,7 @@ const InputControls = ({frames, setframes}) => {
             <div className="ball-controls">
                 <div className="ball-row">
                     <div className="ball"> 1st Ball</div>
+                    <div className="ball-button" id = '0' onClick = {setBall1}>0</div>
                     <div className="ball-button" id = '1' onClick = {setBall1}>1</div>
                     <div className="ball-button" id = '2' onClick = {setBall1}>2</div>
                     <div className="ball-button" id = '3' onClick = {setBall1}>3</div>
@@ -59,6 +60,7 @@ const InputControls = ({frames, setframes}) => {
                 </div>
                 <div className="ball-row">
                 <div className="ball"> 2nd Ball</div>
+                    <div className="ball-button" id = '0' onClick = {setBall2}>0</div>
                     <div className="ball-button" id = '1' onClick = {setBall2}>1</div>
                     <div className="ball-button" id = '2' onClick = {setBall2}>2</div>
                     <div className="ball-button" id = '3' onClick = {setBall2}>3</div>
@@ -72,6 +74,7 @@ const InputControls = ({frames, setframes}) => {
                 </div>
                 <div className="ball-row">
                 <div className="ball"> 3rd Ball</div>
+                    <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
                     <div className="ball-button" id = '1' onClick = {setBall3}>1</div>
                     <div className="ball-button" id = '2' onClick = {setBall3}>2</div>
                     <div className="ball-button" id = '3' onClick = {setBall3}>3</div>

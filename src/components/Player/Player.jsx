@@ -13,6 +13,9 @@ class Frame {
         this.ball3bowled = false
         this.frametotal = 0
         this.framescored = false
+        this.ball1display = ''
+        this.ball2display = ''
+        this.ball3display = ''
     }
 
 }
