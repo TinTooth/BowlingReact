@@ -37,7 +37,14 @@ const Player = ({name}) => {
     }
 
     const openFrame = (frame) => {
-        console.log('open')
+        // console.log('open')
+        frames[frame].frametotal = +frames[frame].ball1 + +frames[frame].ball1
+        frames[frame].framescored = true
+        if (frame != 0) {
+            frames[frame].frametotal += frames[frame-1].frametotal
+        }
+        let newFrames = [...frames];
+        setframes(newFrames);
 
     }
 
@@ -132,7 +139,7 @@ const Player = ({name}) => {
                 else if (frame.spare == true){
                     spareFrame(frame.frameNumber);
                 }
-                else {
+                else if (frame.ball1bowled == true && frame.ball2bowled == true) {
                     openFrame(frame.frameNumber);
                 }
 
