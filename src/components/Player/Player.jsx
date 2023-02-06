@@ -67,7 +67,7 @@ const Player = ({name}) => {
             frames[frame].frametotal = 10 + +frames[frame+1].ball1 + +frames[frame+1].ball2
             frames[frame].framescored = true;
         }
-        else if (frames[frame+1].ball1bowled == true && frames[frame+2].ball1bowled == true) {
+        else if (frame+2 <10 && frames[frame+1].ball1bowled == true && frames[frame+2].ball1bowled == true) {
             frames[frame].frametotal = 10 + +frames[frame+1].ball1 + +frames[frame+2].ball1
             frames[frame].framescored = true;
         }
@@ -81,10 +81,12 @@ const Player = ({name}) => {
     }
     
     const tenthFrame = (frame) => {
-        if (frames[frame].ball1bowled == true) {
+        if (frames[frame-1].framescored == true && frames[frame].ball1bowled == true){
+            
             frames[frame].framescored = true;
+            frames[frame].frametotal = 0;
+            frames[frame].frametotal += frames[frame-1].frametotal + +frames[frame].ball1 + +frames[frame].ball2 + +frames[frame].ball3
         }
-        frames[frame].frametotal += frames[frame-1].frametotal + +frames[frame].ball1 + +frames[frame].ball2 + +frames[frame].ball3
 
         let newFrames = [...frames];
         setframes(newFrames);
