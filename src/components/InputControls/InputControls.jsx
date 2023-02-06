@@ -1,6 +1,6 @@
 import {useState} from "react"
 import "./InputControls.css"
-const InputControls = ({frames, setframes}) => {
+const InputControls = ({frames, setframes, calculateFrames}) => {
     const [currentFrame, setcurrentFrame] = useState(0);
 
     const downFrame = () => {
@@ -20,20 +20,23 @@ const InputControls = ({frames, setframes}) => {
         frames[currentFrame].ball1bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
+        calculateFrames();
     }
     const setBall2 = (e) => {
-      
+        
         frames[currentFrame].ball2 = e.target.id
         frames[currentFrame].ball2bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
+        calculateFrames();
     }
     const setBall3 = (e) => {
-       
+        
         frames[currentFrame].ball3 = e.target.id
         frames[currentFrame].ball3bowled = true
         let newFrames = [...frames];
         setframes(newFrames);
+        calculateFrames();
     }
 
     return (

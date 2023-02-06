@@ -16,6 +16,8 @@ class Frame {
         this.ball1display = ''
         this.ball2display = ''
         this.ball3display = ''
+        this.strike = false
+        this.spare = false
     }
 
 }
@@ -34,11 +36,51 @@ const Player = ({name}) => {
         return result
     }
 
+    const openFrame = () => {
+
+    }
+
+    const spareFrame = () => {
+
+    }
+
+    const strikeFrame = () => {
+
+    }
+
+    const tenthFrame = () => {
+
+    }
+
+    const checkForMarks = () => {
+        frames.forEach((frame) => {
+            if (frame.ball1 === 10) {
+                frame.stike = true;
+            }
+            if (frame.ball1 + frame.ball2 == 10){
+                frame.spare = true;
+            }
+        })
+        let newFrames = [...frames];
+        setframes(newFrames);
+
+    }
+
+
+    const calculateFrames = () => {
+        checkForMarks();  
+        frames.forEach((frame) => {
+
+
+     })
+
+    }
+
     return (
         <>
         <div>Player: {player} Score: {total}</div>
         <ScoreCard frames = {frames}></ScoreCard>
-        <InputControls frames = {frames} setframes = {setframes}></InputControls>
+        <InputControls frames = {frames} setframes = {setframes} calculateFrames = {calculateFrames}></InputControls>
         </>
       );
 }
