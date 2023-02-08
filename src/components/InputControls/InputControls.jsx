@@ -59,6 +59,13 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
      return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall3}>{i+1}</div> )
        
     }
+    const generateButtonBall3spare = (i) => {
+    
+        if (+frames[currentFrame].ball2 + i < 10){
+            return(<div key = {i} className="ball-button" id = {i+1} onClick = {setBall3}>{i+1}</div> )
+        }
+       
+    }
 
     return (
         <div className = "control-bar">
@@ -85,7 +92,7 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                         return (generateButtonBall2tenth(frame.frameNumber))
                     }))}
                 </div>
-                { currentFrame == 9 && frames[9].tenMark ? (
+                { currentFrame == 9 && +frames[9].ball2 + +frames[9].ball2 == 10 ? (
 
                     <div className="ball-row">
                     <div className="ball"> 3rd Ball</div>
@@ -94,7 +101,23 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                         return (generateButtonBall3(frame.frameNumber))
                     })}
                     
-                </div>
+                    </div>
+                ): currentFrame == 9 && frames[9].ball1 == 10 &&  frames[9].ball2 != 10 ? (
+                    <div className="ball-row">
+                    <div className="ball"> 3rd Ball</div>
+                    <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
+                    {frames.map((frame)=> {
+                        return (generateButtonBall3spare(frame.frameNumber))
+                    })}
+                    </div>
+                ): currentFrame == 9 && frames[9].ball1 == 10 &&  frames[9].ball2 == 10 ? (
+                    <div className="ball-row">
+                    <div className="ball"> 3rd Ball</div>
+                    <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
+                    {frames.map((frame)=> {
+                        return (generateButtonBall3(frame.frameNumber))
+                    })}
+                    </div>
                 ): null
                 }   
             </div>

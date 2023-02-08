@@ -131,7 +131,7 @@ const Player = ({name, handicap, team, teamPlayers,setTeam, pnumber}) => {
             else {
                 if (frame.ball1 == 10) {
                     frame.ball1display = "X"
-                    // frame.strike = true;
+                    frame.strike = true;
                 }
                 else {
                     frame.ball1display = frame.ball1
