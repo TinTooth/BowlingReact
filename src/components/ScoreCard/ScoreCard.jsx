@@ -11,7 +11,7 @@ const ScoreCard = ({frames,team}) => {
                 </div>)
             })}
         </div>
-    ): frames && team == 2 ?(
+    ): frames ?(
         <div className= {`scorecard2`}>
         {frames.map((frame,i) => {
             return(

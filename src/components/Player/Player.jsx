@@ -23,7 +23,7 @@ class Frame {
 
 }
 
-const Player = ({name, handicap, team}) => {
+const Player = ({name, handicap, team, teamPlayers,setTeam, pnumber}) => {
     let player = name
     let hc = handicap
     const [frames, setframes] = useState(generateFrames());
@@ -41,6 +41,8 @@ const Player = ({name, handicap, team}) => {
     useEffect ( () => {
         getScore()
     },[frames]
+
+  
 
     )
 
@@ -191,13 +193,17 @@ const Player = ({name, handicap, team}) => {
                 result += (frames[i].frametotal - frames[i-1].frametotal)
             }
         }
+        teamPlayers[pnumber].total = result
+        let newList = [...teamPlayers]
+        setTeam(newList)
         settotal(result)
+
     }
 
     return (
         <>
         <div>Player: {player} Handicap: {hc}</div>
-        <div>Score: {total} Handicaped Score : {total+hc}</div>
+        <div>Score: {total} Handicaped Score : {total+ +hc}</div>
         <ScoreCard frames = {frames} team = {team}></ScoreCard>
         <InputControls frames = {frames} setframes = {setframes} calculateFrames = {calculateFrames} team = {team}></InputControls>
         </>
