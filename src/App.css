@@ -51,14 +51,25 @@ label {
 
 form button {
   margin-left: 4%;
-  border: none;
+  border: solid 1px aliceblue;
   padding: .6%;
+  background-color: black;
+  color: aliceblue;
 }
 
 .add-player-container {
   color: aliceblue;
 
 }
+
+input {
+  background-color: black;
+  color: aliceblue;
+  border-radius: 0%;
+  border: 1px solid aliceblue;
+  padding: .5%;
+}
+
 
 .score-row {
   display: flex;
@@ -67,14 +78,14 @@ form button {
 }
 
 .top-bar {
-  border-bottom: solid 2px grey;
+  border-bottom: solid 5px aliceblue;
   padding: 10px;
   background-color: #000000;
   position: fixed;
   top: 0;
   width: 100vw;
   max-height: 30vh;
-  padding-bottom: 4%;
+  padding-bottom: 2%;
 }
 
 .team-total {
@@ -86,3 +97,4 @@ form button {
 .score-cards {
 margin-top: 38vh;
 }
+

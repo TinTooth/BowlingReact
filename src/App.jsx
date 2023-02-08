@@ -73,12 +73,8 @@ function App() {
         </form>
       </div>
       <div className="score-row">
-        <div className="team-total">Team 1</div>
-        <div className="team-total">Team 2</div>
-      </div>
-      <div className="score-row">
-        <div className="team-total">Total Pins: {team1Score} </div>
-        <div className="team-total">  {team2Score} :Total Pins</div>
+        <div className="team-total">Team 1 Total Pins: {team1Score} </div>
+        <div className="team-total">  {team2Score} : Team 2Total Pins</div>
       </div>
       <div className="score-row">
         <div className="team-total"> Handicap Total Pins: {team1HandicapScore}</div>
