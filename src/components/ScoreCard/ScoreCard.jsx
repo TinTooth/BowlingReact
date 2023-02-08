@@ -1,9 +1,9 @@
 import Frame from "../Frame/Frame";
 import "./ScoreCard.css"
-const ScoreCard = ({frames}) => {
+const ScoreCard = ({frames,team}) => {
 
-    return frames ?( 
-        <div className="scorecard">
+    return frames && team == 1 ?( 
+        <div className= {`scorecard1`}>
             {frames.map((frame,i) => {
                 return(
                 <div className="frameContainer" key = {i}>
@@ -11,6 +11,15 @@ const ScoreCard = ({frames}) => {
                 </div>)
             })}
         </div>
+    ): frames && team == 2 ?(
+        <div className= {`scorecard2`}>
+        {frames.map((frame,i) => {
+            return(
+            <div className="frameContainer" key = {i}>
+                <Frame frame = {frame}></Frame>
+            </div>)
+        })}
+    </div>
      ): null;
 }
  
