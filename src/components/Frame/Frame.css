@@ -1,8 +1,8 @@
 .frame {
     aspect-ratio: 1/1;
   width: 9vw;
-    background-color: rgb(112, 138, 187);
-    border: solid 1px black;
+    background-color: black;
+    border: solid 1px aliceblue;
 }
 
 .frame-number {
@@ -32,11 +32,11 @@
 .ball3 {
     aspect-ratio: 1/1;
     width: 50%;
-    border: solid 1px rgb(237, 240, 87);
+    /* border: solid 1px rgb(237, 240, 87); */
 }
 
 .frame-total {
-    color: brown;
+    font-style: bolder;
     width: 50%;
 }
 

@@ -1,0 +1,15 @@
+.player-card {
+    padding: 1vh;
+    border: solid 2px aliceblue;
+    height: 70vh;
+}
+
+.player-details {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 1vh;
+    border-bottom: dashed 3px aliceblue;
+    margin-bottom: 2%;
+}

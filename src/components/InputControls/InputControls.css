@@ -2,28 +2,49 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: center;
+    align-content: center;
+    /* justify-content: center; */
 }
 
 .frame-controls {
+    font-size: large;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 10%;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .ball-controls {
     width: 80%;
 }
 
+.ball-row {
+    width:75%;
+    margin-bottom: 1%;
+    padding-top: 1%;
+}
+
 .ball {
-    width: 20%;
-    background-color: gray;
+    width: 15%;
+    border: solid 1px aliceblue;
 }
 
 .ball-button {
-    width: 8%;
+    width: 7.4%;
     border: solid 1px black
 }
 
-.ball-button:hover {
+.ball-button:active {
+    color:black;
+    background-color: aliceblue;
+   
+}
+
+.frame-controls button {
     background-color: black;
-    color: white;
+    color:aliceblue;
+    border-radius: 0%;
+    border: solid 1px aliceblue;
 }

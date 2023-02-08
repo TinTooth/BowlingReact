@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import InputControls from "../InputControls/InputControls";
 import ScoreCard from "../ScoreCard/ScoreCard";
+import "./Player.css"
 
 class Frame {
     constructor (frameNumber) {
@@ -201,12 +202,17 @@ const Player = ({name, handicap, team, teamPlayers,setTeam, pnumber}) => {
     }
 
     return (
-        <>
-        <div>Player: {player} Handicap: {hc}</div>
-        <div>Score: {total} Handicaped Score : {total+ +hc}</div>
+        <div className="player-card">
+
+        <div className="player-details">
+            <div>{player} </div>
+            <div>Handicap: {hc} </div>
+            <div>Score: {total}</div>
+            <div>Handicaped Score : {total+ +hc}</div>
+        </div>
         <ScoreCard frames = {frames} team = {team}></ScoreCard>
         <InputControls frames = {frames} setframes = {setframes} calculateFrames = {calculateFrames} team = {team}></InputControls>
-        </>
+        </div>
       );
 }
  

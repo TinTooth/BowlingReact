@@ -69,11 +69,7 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
 
     return (
         <div className = "control-bar">
-            <div className="frame-controls">
-                <button onClick = {downFrame}>-</button>
-                <div>{currentFrame+1}</div>
-                <button onClick = {upFrame}>+</button>
-            </div>
+            
             <div className="ball-controls">
                 <div className="ball-row">
                     <div className="ball"> 1st Ball</div>
@@ -83,7 +79,7 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     })}
                 </div>
                 <div className="ball-row">
-                <div className="ball"> 2nd Ball</div>
+                <div className="ball">2nd Ball</div>
                 <div className="ball-button" id = '0' onClick = {setBall2}>0</div>
                 {currentFrame != 9 || frames[9].ball1 != 10? (frames.map((frame)=> {
                         return (generateButtonBall2(frame.frameNumber))
@@ -93,14 +89,12 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     }))}
                 </div>
                 { currentFrame == 9 && +frames[9].ball2 + +frames[9].ball2 == 10 ? (
-
                     <div className="ball-row">
                     <div className="ball"> 3rd Ball</div>
                     <div className="ball-button" id = '0' onClick = {setBall3}>0</div>
                     {frames.map((frame)=> {
                         return (generateButtonBall3(frame.frameNumber))
                     })}
-                    
                     </div>
                 ): currentFrame == 9 && frames[9].ball1 == 10 &&  frames[9].ball2 != 10 ? (
                     <div className="ball-row">
@@ -120,6 +114,11 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                     </div>
                 ): null
                 }   
+            </div>
+            <div className="frame-controls">
+                <button onClick = {downFrame}>-</button>
+                <div>{currentFrame+1}</div>
+                <button onClick = {upFrame}>+</button>
             </div>
         </div>
         

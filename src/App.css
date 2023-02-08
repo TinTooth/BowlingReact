@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.row {
+  padding: 1%;
+}
+
+label {
+  padding-left: 4%;
+  margin-right: 2%;
+}
+.no-pad{
+  padding-left: 0%;
+}
+
+form button {
+  margin-left: 4%;
+  border: none;
+  padding: .6%;
+}
+
+.add-player-container {
+  color: aliceblue;
+
+}
+
+.score-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.top-bar {
+  border-bottom: solid 2px grey;
+  padding: 10px;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  max-height: 30vh;
+  padding-bottom: 4%;
+}
+
+.team-total {
+  color: aliceblue;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.score-cards {
+margin-top: 38vh;
+}
