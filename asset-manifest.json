@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/https//TinTooth.github.io/BowlingReact/static/css/main.b4499fef.css",
+    "main.css": "/https//TinTooth.github.io/BowlingReact/static/css/main.993b0ec8.css",
     "main.js": "/https//TinTooth.github.io/BowlingReact/static/js/main.00089ee4.js",
     "index.html": "/https//TinTooth.github.io/BowlingReact/index.html",
-    "main.b4499fef.css.map": "/https//TinTooth.github.io/BowlingReact/static/css/main.b4499fef.css.map",
+    "main.993b0ec8.css.map": "/https//TinTooth.github.io/BowlingReact/static/css/main.993b0ec8.css.map",
     "main.00089ee4.js.map": "/https//TinTooth.github.io/BowlingReact/static/js/main.00089ee4.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4499fef.css",
+    "static/css/main.993b0ec8.css",
     "static/js/main.00089ee4.js"
   ]
 }
