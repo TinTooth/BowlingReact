@@ -68,6 +68,7 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
     }
 
     return (
+        <>
         <div className = "control-bar">
             
             <div className="ball-controls">
@@ -115,13 +116,13 @@ const InputControls = ({frames, setframes, calculateFrames}) => {
                 ): null
                 }   
             </div>
+        </div>
             <div className="frame-controls">
                 <button onClick = {downFrame}>-</button>
                 <div>{currentFrame+1}</div>
                 <button onClick = {upFrame}>+</button>
             </div>
-        </div>
-        
+        </>
      );
     }
  

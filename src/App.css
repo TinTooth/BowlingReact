@@ -57,9 +57,16 @@ form button {
   color: aliceblue;
 }
 
+
 .add-player-container {
   color: aliceblue;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
 
+.input-container {
+  width:50vw;
 }
 
 input {
@@ -72,6 +79,7 @@ input {
 
 
 .score-row {
+  font-size: small;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -95,6 +103,6 @@ input {
 }
 
 .score-cards {
-margin-top: 38vh;
+margin-top: 10vh;
 }
 

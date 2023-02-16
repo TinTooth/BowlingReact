@@ -1,7 +1,8 @@
 .player-card {
     padding: 1vh;
-    border: solid 2px aliceblue;
-    height: 70vh;
+    border-bottom: solid 2px aliceblue;
+    border-top: solid 2px aliceblue;
+    height: 50vh;
 }
 
 .player-details {

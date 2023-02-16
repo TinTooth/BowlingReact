@@ -57,21 +57,6 @@ function App() {
 
       <div className="top-bar">
 
-      <div className="add-player-container">
-        <form onSubmit={addPlayer}>
-          <div className="row">
-
-          <label>Player Name</label>
-          <input value = {name} onChange={(e)=>(setname(e.target.value))} />
-          <label>Handicap</label>
-          <input type = {'number'}value = {handicap} onChange={(e)=>(sethandicap(e.target.value))} />
-          </div>
-          <label>Team 1</label>
-          <input type = {"range"} min = {1} max = {2} value = {team} onChange={(e)=>(setteam(e.target.value))} />
-          <label className = 'no-pad'>Team 2</label>
-          <button>Add Player</button>
-        </form>
-      </div>
       <div className="score-row">
         <div className="team-total">Team 1 Total Pins: {team1Score} </div>
         <div className="team-total">  {team2Score} : Team 2Total Pins</div>
@@ -82,6 +67,21 @@ function App() {
       </div>
       </div>
       <div className="score-cards">
+      <div className="add-player-container">
+        <form onSubmit={addPlayer}>
+          <div className="input-container">
+            <label>Player Name</label>
+            <input value = {name} onChange={(e)=>(setname(e.target.value))} />
+            <label>Handicap</label>
+            <input type = {'number'}value = {handicap} onChange={(e)=>(sethandicap(e.target.value))} />
+          </div>
+          <div className="input-container">
+          <label>Team</label>
+          <input type = {"range"} min = {1} max = {2} value = {team} onChange={(e)=>(setteam(e.target.value))} />
+          <button>Add Player</button>
+          </div>
+        </form>
+      </div>
         {team1List.map((player,i)=> {
           return <Player pnumber={i} key = {i} name = {player.name} handicap = {player.handicap} 
           team = {player.team} teamPlayers = {team1List} setTeam = {setteam1List}/>
