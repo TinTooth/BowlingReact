@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/BowlingReact/static/css/main.6f1db037.css",
-    "main.js": "/BowlingReact/static/js/main.00089ee4.js",
+    "main.css": "/BowlingReact/static/css/main.0327187d.css",
+    "main.js": "/BowlingReact/static/js/main.3cbe9645.js",
     "index.html": "/BowlingReact/index.html",
-    "main.6f1db037.css.map": "/BowlingReact/static/css/main.6f1db037.css.map",
-    "main.00089ee4.js.map": "/BowlingReact/static/js/main.00089ee4.js.map"
+    "main.0327187d.css.map": "/BowlingReact/static/css/main.0327187d.css.map",
+    "main.3cbe9645.js.map": "/BowlingReact/static/js/main.3cbe9645.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f1db037.css",
-    "static/js/main.00089ee4.js"
+    "static/css/main.0327187d.css",
+    "static/js/main.3cbe9645.js"
   ]
 }
