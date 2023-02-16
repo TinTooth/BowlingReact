@@ -38,5 +38,6 @@
 .frame-total {
     font-style: bolder;
     width: 50%;
+    background-color: rgb(0, 0, 0);
 }
 
